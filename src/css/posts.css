@@ -1,0 +1,113 @@
+/* posts.css */
+
+.post-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 75%;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+    border: 2px solid #007bff;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.user-handle {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+.post-content {
+    margin-top: 8px;
+    font-size: 16px;
+    border-top: 1px solid #ccc; /* Add a top border */
+    padding-top: 8px; /* Add some padding to separate the content */
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 12px;
+    border-radius: 8px;
+}
+
+.post-actions {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ccc; /* Add a top border */
+    padding-top: 8px; /* Add some padding to separate the buttons */
+}
+
+.post-actions button {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.post-actions button:hover {
+    color: #0056b3;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pagination button:hover {
+    background-color: #e0e0e0;
+}
+
+.pagination button:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+}
+
+.pagination span {
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+}
+

@@ -1,0 +1,37 @@
+
+steps:
+
+  #test step
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: pwd
+
+  #test step
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: ls
+
+  #building Image
+  - name: 'gcr.io/kaniko-project/executor:latest'
+    args:
+      [
+        "--dockerfile=Dockerfile",
+        "--cache=true",
+        "--cache-ttl=336h",
+        "--destination=gcr.io/$PROJECT_ID/slip-app:$COMMIT_SHA"
+      ]
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'mern-app'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/slip-app:$COMMIT_SHA'
+      - '--region'
+      - 'asia-south1'
+      - '--platform'
+      - 'managed'
+
+images:
+  - 'gcr.io/$PROJECT_ID/slip-app:$COMMIT_SHA'
+
+timeout: 3600s
